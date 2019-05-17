@@ -5,7 +5,7 @@ package chapter01;
   */
 
 
-public class Cahpter01_01 {
+public class Chapter01_01 {
 	public static void main(String [] args) {
 		// for display and for newline 
 		System.out.println("Welcome to Java");
