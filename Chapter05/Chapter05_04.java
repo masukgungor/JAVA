@@ -22,7 +22,7 @@ public class Chapter05_04 {
 
 		while (miles  <= 10) {
 
-			kilometers = miles * kilometerOfOneMile; //determine from kilogram to pound 
+			kilometers = miles * kilometerOfOneMile; //determine from miles to kilometer
 
 			System.out.printf("%d\t%-12.3f \n", miles, kilometers);
 
