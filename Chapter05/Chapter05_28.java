@@ -48,60 +48,34 @@ public class Chapter05_28 {
 		int temp = 0;
 		int selectDayIndex = 0; // determine day
 
-		if (isLeapYear) {
-			for (int i = 1; i < 12; i++) {
-				firstDayOfMonth += '\n';
-				// 31 months
-				if (i == 4 || i == 6 || i == 9 || i == 11) { 
-					temp = 2;
-				} else if (i == 2) {  // for february
-					temp = 1;
+		for (int i = 1; i < 12; i++) {
+			firstDayOfMonth += '\n';
+			// 31 months
+			if (i == 4 || i == 6 || i == 9 || i == 11) {
+				temp = 2;
+			} else if (i == 2 && isLeapYear) { // for february
+				temp = 1;
 
-				} else { // 30 months
-					temp = 3;
-				}
-				
-				// calculation of the week head
-				if ((indexOfDay + temp) > 6) {
-					selectDayIndex = indexOfDay + temp - 7;
-					indexOfDay = selectDayIndex;
-				} else {
-					selectDayIndex = indexOfDay + temp;
-					indexOfDay = selectDayIndex;
-				}
-
-				firstDayOfMonth += "1 " + selectMounth[i] + "  " + year + "  : " + selectDay[selectDayIndex];
-
+			} else if (i == 2) {
+				temp = 0;
+			} else { // 30 months
+				temp = 3;
 			}
 
-		} else {
-			for (int i = 1; i < 12; i++) {
-				firstDayOfMonth += '\n';
-				// 31 months
-				if (i == 4 || i == 6 || i == 9 || i == 11) {
-					temp = 2;
-				} else if (i == 2) {// for february
-					temp = 0;
-				} else {// 30 months
-					temp = 3;
-				}
-
-
-				// calculation of the week head
-				if ((indexOfDay + temp) > 6) {
-					selectDayIndex = indexOfDay + temp - 7;
-					indexOfDay = selectDayIndex;
-				} else {
-					selectDayIndex = indexOfDay + temp;
-					indexOfDay = selectDayIndex;
-				}
-
-				firstDayOfMonth += "1 " + selectMounth[i] + "  " + year + "  : " + (selectDay[selectDayIndex]);
-
+			// calculation of the week head
+			if ((indexOfDay + temp) > 6) {
+				selectDayIndex = indexOfDay + temp - 7;
+				indexOfDay = selectDayIndex;
+			} else {
+				selectDayIndex = indexOfDay + temp;
+				indexOfDay = selectDayIndex;
 			}
+
+			firstDayOfMonth += "1 " + selectMounth[i] + "  " + year + "  : " + selectDay[selectDayIndex];
 
 		}
-		//display result
+
+		// display result
 		System.out.println(firstDayOfMonth);
 	}
 

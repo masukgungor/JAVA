@@ -55,76 +55,44 @@ public class Chapter05_29 {
 		int temp = 0;
 		int selectDayIndex = 0; // determine day
 
+		for (int i = 1; i < 12; i++) {
+			// 31 months
+			if (i == 4 || i == 6 || i == 9 || i == 11) {
+				if (selectMounth[i].toLowerCase().contentEquals(calendarMonth))
+					determineMonthDayNumber = 30;
+				temp = 2;
+			} else if (i == 2 && isLeapYear) { // for february
+				if (selectMounth[i].toLowerCase().contentEquals(calendarMonth))
+					determineMonthDayNumber = 31;
+				temp = 1;
 
-		if (isLeapYear) {
-			for (int i = 1; i < 12; i++) {
-				// 31 months
-				if (i == 4 || i == 6 || i == 9 || i == 11) {
-					if (selectMounth[i].toLowerCase().contentEquals(calendarMonth))
-						determineMonthDayNumber = 30;
-					temp = 2;
-				} else if (i == 2) { // for february
-					if (selectMounth[i].toLowerCase().contentEquals(calendarMonth))
-						determineMonthDayNumber = 31;
-					temp = 1;
+			} else if (i == 2) { // for february
+				if (selectMounth[i].toLowerCase().contentEquals(calendarMonth))
+					determineMonthDayNumber = 31;
+				temp = 0;
+			} else { // 30 months
+				if (selectMounth[i].toLowerCase().contentEquals(calendarMonth))
+					determineMonthDayNumber = 31;
+				temp = 3;
 
-				} else { // 30 months
-					if (selectMounth[i].toLowerCase().contentEquals(calendarMonth))
-						determineMonthDayNumber = 31;
-					temp = 3;
-
-				}
-				if (i == 1) {
-					if (selectMounth[i].toLowerCase().contentEquals(calendarMonth))
-						determineMonthDayNumber = 29;
-				}
-
-				// calculation of the week head
-				if ((indexOfDay + temp) > 6) {
-					selectDayIndex = indexOfDay + temp - 7;
-					indexOfDay = selectDayIndex;
-				} else {
-					selectDayIndex = indexOfDay + temp;
-					indexOfDay = selectDayIndex;
-				}
-
-				dayOfmonth[i] = selectDay[selectDayIndex];
+			}
+			if (i == 1) {
+				if (selectMounth[i].toLowerCase().contentEquals(calendarMonth))
+					determineMonthDayNumber = 29;
 			}
 
-		} else {
-			for (int i = 1; i < 12; i++) {
-				// 31 months
-				if (i == 4 || i == 6 || i == 9 || i == 11) {
-					if (selectMounth[i].toLowerCase().contentEquals(calendarMonth))
-						determineMonthDayNumber = 30;
-					temp = 2;
-				} else if (i == 2) {// for february
-					if (selectMounth[i].toLowerCase().contentEquals(calendarMonth))
-						determineMonthDayNumber = 31;
-					temp = 0;
-				} else {// 30 months
-					if (selectMounth[i].toLowerCase().contentEquals(calendarMonth))
-						determineMonthDayNumber = 31;
-					temp = 3;
-				}
-				if (i == 1) {
-					if (selectMounth[i].toLowerCase().contentEquals(calendarMonth))
-						determineMonthDayNumber = 28;
-				}
-
-				// calculation of the week head
-				if ((indexOfDay + temp) > 6) {
-					selectDayIndex = indexOfDay + temp - 7;
-					indexOfDay = selectDayIndex;
-				} else {
-					selectDayIndex = indexOfDay + temp;
-					indexOfDay = selectDayIndex;
-				}
-				dayOfmonth[i] = selectDay[selectDayIndex];
+			// calculation of the week head
+			if ((indexOfDay + temp) > 6) {
+				selectDayIndex = indexOfDay + temp - 7;
+				indexOfDay = selectDayIndex;
+			} else {
+				selectDayIndex = indexOfDay + temp;
+				indexOfDay = selectDayIndex;
 			}
 
+			dayOfmonth[i] = selectDay[selectDayIndex];
 		}
-		
+
 		int indexOfdayTheMounth = 0;
 		for (int i = 1; i < 12; i++) {
 
