@@ -10,29 +10,30 @@ import java.util.Scanner;
 public class Chapter05_16 {
 
 	public static void main(String[] args) {
-		
+
 		Scanner input = new Scanner(System.in);
-		
+
 		System.out.println("Please enter one  integer number");
-		
+
 		int number = input.nextInt();
-		
-		int divider = 2 ;
-		
-		String factorOfNumber = "" ;
-		
+
+		int divider = 2;
+
+		String factorOfNumber = "";
+
 		while (divider < number) {
-			
+
 			if (number % divider != 0) {
-				divider ++ ;
+				divider++;
 			}
+
 			if (number % divider == 0) {
-				factorOfNumber += divider + " " ;
-				number /= divider ;
+				factorOfNumber += divider + " ";
+				number /= divider;
 			}
 		}
-		
-		System.out.println(" Factor of "+ number +" : " + factorOfNumber +" ");
+
+		System.out.println(" Factor of " + number + " : " + factorOfNumber + " ");
 	}
 
 }

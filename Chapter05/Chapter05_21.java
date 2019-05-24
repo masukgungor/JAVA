@@ -36,6 +36,7 @@ public class Chapter05_21 {
 		    double monthlyPayment = loanAmount * monthlyInterestRate / (1
 		      - 1 / Math.pow(1 + monthlyInterestRate, numberOfYears * 12));
 		    double totalPayment = monthlyPayment * numberOfYears * 12;
+		    
 	    	annualInterestRate = annualInterestRate +0.125;
 	    	
 	    	

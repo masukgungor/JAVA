@@ -28,7 +28,7 @@ public class Chapter05_05 {
 
 			poundsOfKilograms = kilograms * poundOfOneKilo; //determine from kilogram to pound 
 
-			KilogramsOfPounds = pounds/poundOfOneKilo ; //determine from pond to kilogram
+			KilogramsOfPounds = pounds/poundOfOneKilo ; //determine from pound to kilogram
 
 			
 			System.out.printf("   %d\t%12.1f\t| %d\t%15.2f \n", kilograms, poundsOfKilograms,pounds, KilogramsOfPounds);
